@@ -2,7 +2,7 @@
 
 namespace App\Message;
 
-final class ProductUpdated
+final class ProductUpdatedMessage
 {
     public function __construct(
         private int $productId,
