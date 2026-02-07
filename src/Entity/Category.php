@@ -60,7 +60,10 @@ class Category
     {
         return $this->products;
     }
-
+    public function __toString(): string
+    {
+        return $this->designation ?? '';
+    }
     public function addProduct(Product $product): static
     {
         if (!$this->products->contains($product)) {

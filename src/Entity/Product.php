@@ -65,6 +65,10 @@ class Product
     {
         return $this->categories;
     }
+    public function __toString(): string
+    {
+        return $this->designation ?? '';
+    }
 
     public function addCategory(Category $category): static
     {
