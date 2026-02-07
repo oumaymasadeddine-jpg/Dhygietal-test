@@ -2,7 +2,7 @@
 
 API REST avec back-office pour la gestion de produits et catégories.
 
-## 🚀 Stack Technique
+## Stack Technique
 
 - Symfony 6.4
 - API Platform
@@ -12,14 +12,14 @@ API REST avec back-office pour la gestion de produits et catégories.
 - MySQL 8.0
 - Docker
 
-## 📋 Fonctionnalités
+##  Fonctionnalités
 
-- ✅ API REST complète (GET, POST, PATCH)
-- ✅ Relation ManyToMany Product ↔ Category
-- ✅ Back-office d'administration
-- ✅ Logs asynchrones des modifications produits
+-  API REST complète (GET, POST, PATCH)
+-  Relation ManyToMany Product ↔ Category
+-  Back-office d'administration
+-  Logs asynchrones des modifications produits
 
-## 🐳 Installation avec Docker
+##  Installation avec Docker
 ```bash
 # Cloner le projet
 git clone https://github.com/oumaymasadeddine-jpg/Dhygietal-test.git
@@ -35,7 +35,7 @@ L'application sera accessible sur :
 - **API** : http://localhost:8000/api
 - **Back-office** : http://localhost:8000/admin
 
-## 💻 Installation en local (sans Docker)
+##  Installation en local (sans Docker)
 ```bash
 # Installer les dépendances
 composer install
@@ -57,7 +57,7 @@ symfony server:start
 php bin/console messenger:consume async -vv
 ```
 
-## 🧪 Tester l'API
+##  Tester l'API
 
 ### Avec Swagger UI
 Accédez à http://localhost:8000/api pour une interface interactive.
@@ -90,7 +90,7 @@ curl -X PATCH http://localhost:8000/api/products/1 \
   -d '{"designation": "Laptop Updated", "categories": ["/api/categories/1", "/api/categories/2"]}'
 ```
 
-## 📊 Vérifier les logs asynchrones
+##  Vérifier les logs asynchrones
 
 Les modifications de produits génèrent des logs en base via Messenger.
 ```bash
@@ -101,7 +101,7 @@ docker-compose exec php php bin/console doctrine:query:sql "SELECT * FROM produc
 php bin/console doctrine:query:sql "SELECT * FROM product_log"
 ```
 
-## 🎯 Endpoints API
+##  Endpoints API
 
 | Méthode | Endpoint | Description |
 |---------|----------|-------------|
@@ -112,7 +112,7 @@ php bin/console doctrine:query:sql "SELECT * FROM product_log"
 | GET | `/api/categories` | Liste toutes les catégories |
 | POST | `/api/categories` | Créer une catégorie |
 
-## 🔐 Back-office
+##  Back-office
 
 Accédez au back-office sur http://localhost:8000/admin
 
@@ -120,7 +120,7 @@ Fonctionnalités :
 - CRUD complet Product avec sélection multiple de catégories
 - CRUD complet Category
 
-## 🏗️ Architecture
+##  Architecture
 ```
 src/
 ├── Controller/Admin/        # Controllers EasyAdmin
@@ -131,7 +131,7 @@ src/
 └── Repository/              # Repositories Doctrine
 ```
 
-## 📝 Commandes utiles
+##  Commandes utiles
 ```bash
 # Lancer les migrations
 php bin/console doctrine:migrations:migrate
@@ -164,6 +164,6 @@ curl "http://localhost:8000/api/products?categories.id=1"
 curl "http://localhost:8000/api/products?designation=test&categories.id=1"
 ```
 
-## 👨‍💻 Auteur
+##  Auteur
 
 Développé par Oumayma sadeddine.

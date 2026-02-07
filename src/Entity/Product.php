@@ -13,6 +13,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
+
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 #[ApiResource(
@@ -23,6 +26,7 @@ use Symfony\Component\Validator\Constraints as Assert;
         new Patch(denormalizationContext: ['groups' => ['product:write']])
     ]
 )]
+#[ApiFilter(SearchFilter::class, properties: ['designation' => 'partial', 'categories.id' => 'exact'])]
 class Product
 {
     #[ORM\Id]
